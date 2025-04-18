@@ -1,11 +1,9 @@
 export default function Header() {
-
-  
     return(
 
     <header className=" text-white p-4 fixed w-full z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Studio RT</h1>
+        <h1 className="text-2xl font-bold hover:text-green-400">Studio RT</h1>
         <nav>
           <ul className="flex space-x-4">
             <li><a href="#" className="hover:text-green-400">Sobre Nós</a></li>
@@ -16,5 +14,7 @@ export default function Header() {
         </nav>
       </div>
       </header>
+
+      
     )
   }
