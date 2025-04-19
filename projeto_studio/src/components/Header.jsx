@@ -1,20 +1,34 @@
+import Link from 'next/link'
+
 export default function Header() {
-    return(
+  return (
 
     <header className=" text-white p-4 fixed w-full z-10">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold hover:text-green-400">Studio RT</h1>
+      <div className="container">
+
+        <div className="campo_logo" >
+          
+          <Link href="/">
+            <img src="/logo_sem_fundo.png" alt="Logo" style={{ cursor: 'pointer' }} />
+          </Link>
+
+          <div className="logo_texto">
+            <h1>Studio RT</h1>
+            <p>Escola de Dança</p>
+          </div>
+        </div>
+
         <nav>
           <ul className="flex space-x-4">
-            <li><a href="#" className="hover:text-green-400">Sobre Nós</a></li>
-            <li><a href="#" className="hover:text-green-400">Galeria</a></li>
-            <li><a href="#" className="hover:text-green-400">Professores</a></li>
-            <li><a href="#" className="hover:text-green-400">Fale Conosco!</a></li>
+            <li><Link href="/sobre">Sobre Nós</Link></li>
+            <li><Link href="/modalidades">Modalidaes</Link></li>
+            <li><Link href="professores">Professores</Link></li>
+            <li><Link href="/pre_cadastro">Pre-Cadastro</Link></li>
           </ul>
         </nav>
       </div>
-      </header>
+    </header>
 
-      
-    )
-  }
+
+  )
+}

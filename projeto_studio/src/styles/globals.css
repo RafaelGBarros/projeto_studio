@@ -1,26 +1,122 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 :root {
   --background: #1f1e1e;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-color: #ffffff;
+  --border-radius: 10px;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--font-color);
+  font-family: 'Raleway', sans-serif;
 }
+
+header {
+  color: #ffffff;
+  /* Cor da fonte */
+  padding: 16px;
+  /* Espaçamento interno */
+  width: 100%;
+  top: 30px;
+  /* Distância do topo da página */
+  left: 0;
+  z-index: 10;
+}
+
+.campo_logo {
+  display: flex;
+  /* Flexbox para alinhar logo e texto */
+  align-items: center;
+  /* Alinha verticalmente o logo e o contêiner de texto */
+  padding: 0 20px;
+  /* Espaçamento interno */
+}
+
+.campo_logo :hover {
+  color: #4caf50;
+  cursor: pointer;
+}
+
+.campo_logo img {
+  width: 100px;
+  /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+}
+
+.logo_texto {
+  display: flex;
+  flex-direction: column;
+  /* Isso faz com que o h1 e o p fiquem um embaixo do outro */
+  align-items: center;
+  /* Centraliza os itens horizontalmente */
+  margin-left: 20px;
+  /* Espaço entre o logo e o texto */
+}
+
+.logo_texto h1 {
+  font-size: 2rem;
+  /* Tamanho do título */
+  margin: 0;
+  /* Remove a margem padrão do h1 */
+  font-weight: normal;
+}
+
+.logo_texto p {
+  font-size: 1.2rem;
+  /* Tamanho do parágrafo */
+  color: #969595;
+  /* Cor do texto */
+  margin-top: 5px;
+  /* Espaço entre o título e o parágrafo */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  /* Coloca o logo e o menu nas extremidades */
+  align-items: center;
+  max-width: 1200px;
+  /* Largura máxima do contêiner */
+  margin: 0 auto;
+}
+
+
+/* ESTILIZADORES DA BARRA DE NAVEGACAO */
+nav ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav ul li a:hover {
+  color: #4caf50;
+}
+
+/* ESTILIZADORES DO CAMPO PRINCIPAL - VIDEO - */
+.principal {
+  margin-top: 3%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.principal video {
+  width: 90%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* ESTILIZADORES CARROSSEL DE DESTAQUES - VIDEO - */
