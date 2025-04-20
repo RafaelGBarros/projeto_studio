@@ -20,10 +20,10 @@ export default function Header() {
 
         <nav>
           <ul className="flex space-x-4">
-            <li><Link href="/sobre">Sobre Nós</Link></li>
-            <li><Link href="/modalidades">Modalidaes</Link></li>
-            <li><Link href="professores">Professores</Link></li>
-            <li><Link href="/pre_cadastro">Pre-Cadastro</Link></li>
+            <li><Link href="/sobre">SOBRE</Link></li>
+            <li><Link href="/modalidades">MODALIDADES</Link></li>
+            <li><Link href="professores">PROFESSORES</Link></li>
+            <li><Link href="/pre_cadastro">FAÇA PARTE</Link></li>
           </ul>
         </nav>
       </div>

@@ -1,6 +1,6 @@
 import  Header from '../components/Header'
 import Principal from '../components/Princial'
-
+import Carrossel from '../components/Carrossel'
 
 
 export default function Home() {
@@ -8,6 +8,7 @@ export default function Home() {
     <section>
       <Header />
       <Principal />
+      <Carrossel />
     </section>
   )
 }
