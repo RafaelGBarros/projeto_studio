@@ -7,33 +7,40 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-export default function Carrossel() {
+export default function Carrossel({onSelecionar}) {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: false,
   };
 
   //  MOCK DE DADOS
   const dados = [
     {
-      titulo: 'Notícia 1',
-      descricao: 'Descrição da notícia 1.',
+      titulo: 'RT sobe a Serra! Eventos de Outubro',
+      descricao: 'Tudo que rolou durante nossa participacao no evento CHRVT em campos de Jordão.',
       imagem: '/noticia1.png',
+      texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      caminho: '/',
     },
     {
-      titulo: 'Destaque 2',
-      descricao: 'Destaque do mês.',
+      titulo: 'Bem vindos, Novos integrantes!',
+      descricao: 'Sai hoje, Resultado de nossa audição para novos integrantes 2025',
       imagem: '/noticia2.png',
+      texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      caminho: '/',
     },
     {
-      titulo: 'Evento 3',
-      descricao: 'Detalhes do próximo evento.',
+      titulo: 'Ingressos a Venda! Favela Raizes',
+      descricao: 'Abrimos as vendas para nosso espetaculo, garanta ja o seu!',
       imagem: '/noticia3.png',
+      texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      caminho: '/',
     }
   ];
 
@@ -46,6 +53,7 @@ export default function Carrossel() {
             titulo={item.titulo}
             descricao={item.descricao}
             imagem={item.imagem}
+            onClick={() => onSelecionar(item)}
           />
         ))}
       </Slider>

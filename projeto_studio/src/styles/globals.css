@@ -11,16 +11,24 @@ body {
   background: var(--background);
   color: var(--font-color);
   font-family: 'Raleway', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  
 }
 
 header {
-  color: #ffffff;
-  /* Cor da fonte */
-  padding: 16px;
-  /* Espaçamento interno */
+  margin-top: 1%;
   width: 100%;
-  top: 30px;
-  /* Distância do topo da página */
   left: 0;
   z-index: 10; 
 }
@@ -91,35 +99,85 @@ nav ul li a:hover {
 /* ESTILIZADORES DO CAMPO PRINCIPAL - VIDEO - */
 .area_central {
   margin-top: 3%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  margin-bottom: 2%;
   width: 100%;
-  height: 80%;
-  background: grey;
+  height: 500px;
+  border-radius: var(--border-radius);
+}
+
+video{
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+
+.area_central h2{
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.area_central p{
+  font-size: 1.2rem;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.area_central a {
+  color: #4caf50;
+  transition: all 0.3s ease;
+}
+
+.area_central a:hover {
+  color: #4caf50;
+  cursor: pointer;
+  text-shadow: #ffffff 0px 0px 10px;
 }
 
 /* ESTILIZADORES CARROSSEL DE DESTAQUES - */
 
-.carrossel {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-
 .item-carrossel {
   padding: 20px;
-  background-color: #2c2c2c;
-  color: white;
-  text-align: center;
-  border-radius: 8px;
+  margin-left: 3%;
+  border-radius: var(--border-radius);
+  height: 250px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: right;
+  position: relative;
 }
 
-.item-carrossel {
-  padding: 20px;
-  background-color: #2c2c2c;
-  color: white;
-  text-align: center;
-  border-radius: 8px;
+.item-carrossel:hover {
   height: 300px;
+  margin-top: -50px;
+  z-index: 10;        
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+.item-carrossel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: 1;
+  border-radius: var(--border-radius);
+}
+
+.item-carrossel .conteudo {
+  position: relative;
+  z-index: 2;
+}
+
+.item-carrossel h3 {
+  font-size: 2rem;
+  align-items: left;
+  font-weight: normal;
+}
+
+.item-carrossel p {
+  font-size: 1.2rem;
 }

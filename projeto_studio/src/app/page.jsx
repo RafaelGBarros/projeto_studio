@@ -1,14 +1,18 @@
+'use client'
 import  Header from '../components/Header'
 import Principal from '../components/Princial'
 import Carrossel from '../components/Carrossel'
+import React, { useState } from 'react'
 
 
 export default function Home() {
+  const [conteudoSelecionado, setConteudoSelecionado] = useState(null);
+
   return (
-    <section>
+    <section className="home">
       <Header />
-      <Principal />
-      <Carrossel />
+      <Principal conteudo={conteudoSelecionado} />
+      <Carrossel onSelecionar={setConteudoSelecionado}/>
     </section>
   )
 }
