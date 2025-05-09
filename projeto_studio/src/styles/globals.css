@@ -17,14 +17,14 @@ body {
   height: 100vh;
 }
 
-.home {
+section{
   max-width: 1200px;
   height: 100vh;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  
 }
+
 
 header {
   margin-top: 1%;
