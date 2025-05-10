@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # ou master, dependendo da sua branch principal
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -19,13 +22,11 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./projeto_studio
-        shell: bash
-        run: 'npm install'
+        run: npm install
 
       - name: Build
         working-directory: ./projeto_studio
-        shell: bash
-        run: 'npm run build'
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
