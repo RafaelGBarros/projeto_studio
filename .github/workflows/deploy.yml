@@ -18,13 +18,15 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
+        working-directory: ./projeto_studio
         run: npm install
 
       - name: Build
+        working-directory: ./projeto_studio
         run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist  # ou build, dependendo da sua configuração de build
+          folder: projeto_studio/out
           branch: gh-pages 
