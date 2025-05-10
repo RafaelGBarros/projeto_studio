@@ -19,11 +19,13 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./projeto_studio
-        run: npm install
+        run: |
+          npm install
 
       - name: Build
         working-directory: ./projeto_studio
-        run: npm run build
+        run: |
+          npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
