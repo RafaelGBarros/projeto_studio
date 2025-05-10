@@ -30,7 +30,7 @@ export default function Header() {
           />
           <div className="logo_texto desktop-only">
             <h1>Studio de Dança</h1>
-            <p>Arte em Movimento</p>
+            <p>arte em movimento</p>
           </div>
         </div>
 

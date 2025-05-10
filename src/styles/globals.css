@@ -27,7 +27,6 @@ section {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 header {
@@ -530,4 +529,95 @@ video {
     padding: 6px 12px;
     font-size: 0.8rem;
   }
+}
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.home-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.green-strip {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-60%);
+  background: #4caf50;
+  padding: 40px 60px 40px 20px;
+  border-radius: 0 50px 50px 0;
+  z-index: 1;
+  width: 65%;
+}
+
+.welcome-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-left: auto;
+  padding-right: 20px;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.welcome-title h1 {
+  font-size: 2.5rem;
+  color: var(--font-color);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home-content {
+  position: relative;
+  width: 80%;
+  z-index: 2;
+  text-align: justify;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.presentation-text {
+  width: 100%;
+  text-align: justify;
+  margin-left: auto;
+}
+
+.presentation-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--font-color);
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.social-links {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  justify-content: flex-end;
+  padding-right: 20px;
+  margin-left: auto;
+}
+
+.social-links a {
+  color: var(--font-color);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #000000;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
