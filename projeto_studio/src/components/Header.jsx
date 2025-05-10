@@ -21,7 +21,8 @@ export default function Header() {
       <div className="container">
         <div className="campo_logo" onClick={() => router.push('/')}>
           <Image
-            src="/logo.png"
+            className="logo_img"
+            src="/logo_sem_fundo.png"
             alt="Logo Studio"
             width={80}
             height={80}
