@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import CampoSobre from '@/src/components/CampoModalidades';
+import CampoSobre from '../../components/CampoModalidades';
 import Header from '../../components/Header'
 
 export default function Home() {

@@ -1,9 +1,8 @@
 'use client'
-import  Header from '../components/Header'
-import Principal from '../components/Princial'
-import Carrossel from '../components/Carrossel'
+import Header from '@/components/Header'
+import Principal from '@/components/Princial'
+import Carrossel from '@/components/Carrossel'
 import React, { useState } from 'react'
-
 
 export default function Home() {
   const [conteudoSelecionado, setConteudoSelecionado] = useState(null);

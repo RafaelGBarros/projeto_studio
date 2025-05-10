@@ -1,34 +1,58 @@
-import Link from 'next/link'
+'use client';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Header() {
+  const [menuAberto, setMenuAberto] = useState(false);
+  const router = useRouter();
+
+  const toggleMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
+
+  const navegarPara = (caminho) => {
+    router.push(caminho);
+    setMenuAberto(false);
+  };
+
   return (
-
-    <header className=" text-white p-4 fixed w-full z-10">
+    <header>
       <div className="container">
-
-        <div className="campo_logo" >
-          
-          <Link href="/">
-            <img src="/logo_sem_fundo.png" alt="Logo" style={{ cursor: 'pointer' }} />
-          </Link>
-
-          <div className="logo_texto">
-            <h1>Studio RT</h1>
-            <p>Escola de Dança</p>
+        <div className="campo_logo" onClick={() => router.push('/')}>
+          <Image
+            src="/logo.png"
+            alt="Logo Studio"
+            width={80}
+            height={80}
+            priority
+          />
+          <div className="logo_texto desktop-only">
+            <h1>Studio de Dança</h1>
+            <p>Arte em Movimento</p>
           </div>
         </div>
 
         <nav>
-          <ul className="flex space-x-4">
-            <li><Link href="/sobre">SOBRE</Link></li>
-            <li><Link href="/modalidades">MODALIDADES</Link></li>
-            <li><Link href="professores">PROFESSORES</Link></li>
-            <li><Link href="/pre_cadastro">FAÇA PARTE</Link></li>
+          <button 
+            className="menu-hamburguer"
+            onClick={toggleMenu}
+            aria-label="Abrir menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul className={`menu-links ${menuAberto ? 'menu-links-aberto' : ''}`}>
+            <li><a onClick={() => navegarPara('/')}>Home</a></li>
+            <li><a onClick={() => navegarPara('/modalidades')}>Modalidades</a></li>
+            <li><a onClick={() => navegarPara('/professores')}>Professores</a></li>
+            <li><a onClick={() => navegarPara('/sobre')}>Sobre</a></li>
+            <li><a onClick={() => navegarPara('/faca_parte')}>Faça Parte</a></li>
           </ul>
         </nav>
       </div>
     </header>
-
-
-  )
+  );
 }

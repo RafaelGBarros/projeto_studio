@@ -1,13 +1,25 @@
 'use client';
-
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import ItemCarrossel from './ItemCarrossel';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+export default function Carrossel() {
+  const [isMobile, setIsMobile] = useState(false);
 
-export default function Carrossel({onSelecionar}) {
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -44,6 +56,20 @@ export default function Carrossel({onSelecionar}) {
     }
   ];
 
+  if (isMobile) {
+    return (
+      <div className="carrossel-container">
+        {dados.map((item, index) => (
+          <ItemCarrossel
+            key={index}
+            titulo={item.titulo}
+            descricao={item.descricao}
+          />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="carrossel">
       <Slider {...settings}>
@@ -52,8 +78,6 @@ export default function Carrossel({onSelecionar}) {
             key={index}
             titulo={item.titulo}
             descricao={item.descricao}
-            imagem={item.imagem}
-            onClick={() => onSelecionar(item)}
           />
         ))}
       </Slider>
