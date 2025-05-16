@@ -53,7 +53,6 @@ export default function Header() {
             </button>
 
             <ul className={`menu-links ${menuAberto ? 'menu-links-aberto' : ''}`}>
-              <li><a onClick={() => navegarPara('/')}>Home</a></li>
               <li><a onClick={() => navegarPara('/modalidades')}>Modalidades</a></li>
               <li><a onClick={() => navegarPara('/professores')}>Professores</a></li>
               <li><a onClick={() => navegarPara('/sobre')}>Sobre</a></li>

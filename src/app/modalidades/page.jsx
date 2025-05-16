@@ -8,8 +8,8 @@ import ModalidadeModal from '@/components/ModalidadeModal'
 const modalidades = [
   {
     id: 1,
-    nome: 'Ballet Clássico',
-    imagem: '/modalidades/ballet.jpg',
+    nome: 'Ballet Infantil',
+    imagem: '/balletKids.jpg',
     descricao: 'O Ballet Clássico é a base de todas as danças. Desenvolve postura, equilíbrio, força e graciosidade através de movimentos precisos e elegantes.',
     horarios: [
       { dia: 'Segunda e Quarta', hora: '09:00 - 10:30' },
@@ -19,8 +19,8 @@ const modalidades = [
   },
   {
     id: 2,
-    nome: 'Jazz',
-    imagem: '/modalidades/jazz.jpg',
+    nome: 'Dancas Urbanas - Adulto',
+    imagem: '/DuAdulto.jpg',
     descricao: 'O Jazz é uma dança dinâmica e expressiva que combina elementos técnicos com movimentos mais soltos e interpretação musical.',
     horarios: [
       { dia: 'Segunda e Quarta', hora: '14:00 - 15:30' },
@@ -31,7 +31,7 @@ const modalidades = [
   {
     id: 3,
     nome: 'Dança Contemporânea',
-    imagem: '/modalidades/contemporanea.jpg',
+    imagem: '/DuMisto.jpg',
     descricao: 'A Dança Contemporânea explora movimentos livres e criativos, mesclando diferentes técnicas e permitindo maior expressão corporal.',
     horarios: [
       { dia: 'Terça e Quinta', hora: '19:00 - 20:30' },
@@ -41,8 +41,8 @@ const modalidades = [
   },
   {
     id: 4,
-    nome: 'Hip Hop',
-    imagem: '/modalidades/hiphop.jpg',
+    nome: 'DU Kids',
+    imagem: '/DuKids.jpg',
     descricao: 'O Hip Hop é um estilo urbano que trabalha ritmo, coordenação e atitude através de movimentos marcantes e coreografias dinâmicas.',
     horarios: [
       { dia: 'Segunda e Quarta', hora: '18:00 - 19:30' },
