@@ -1,15 +1,14 @@
 'use client'
 import Header from '@/components/Header'
-import GreenStrip from '@/components/GreenStrip'
+import ConteudoPrincipal from '@/components/ConteudoPrincipal'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
 import React from 'react'
 
 export default function Home() {
   return (
     <section className="home">
       <Header />
-      <GreenStrip />
+      <ConteudoPrincipal />
       <Footer />
     </section>
   )

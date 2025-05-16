@@ -1,8 +1,8 @@
 'use client';
 
-export default function GreenStrip() {
+export default function conteudoPrincipal() {
   return (
-    <div className="green-strip">
+    <div className="conteudo-principal">
       <div className="welcome-title">
         <h1>Bem vindos ao Studio RT!</h1>
       </div>
