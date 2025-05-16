@@ -1,37 +1,89 @@
 'use client'
-import { useState, useEffect } from 'react'
-import CampoSobre from '../../components/CampoModalidades';
-import Header from '../../components/Header'
+import { useState } from 'react'
+import Header from '@/components/Header'
+import ModalidadeCard from '@/components/ModalidadeCard'
+import ModalidadeModal from '@/components/ModalidadeModal'
 
-export default function Home() {
+// Mock de dados
+const modalidades = [
+  {
+    id: 1,
+    nome: 'Ballet Clássico',
+    imagem: '/modalidades/ballet.jpg',
+    descricao: 'O Ballet Clássico é a base de todas as danças. Desenvolve postura, equilíbrio, força e graciosidade através de movimentos precisos e elegantes.',
+    horarios: [
+      { dia: 'Segunda e Quarta', hora: '09:00 - 10:30' },
+      { dia: 'Terça e Quinta', hora: '16:00 - 17:30' }
+    ],
+    professores: ['Maria Silva', 'Ana Paula Santos']
+  },
+  {
+    id: 2,
+    nome: 'Jazz',
+    imagem: '/modalidades/jazz.jpg',
+    descricao: 'O Jazz é uma dança dinâmica e expressiva que combina elementos técnicos com movimentos mais soltos e interpretação musical.',
+    horarios: [
+      { dia: 'Segunda e Quarta', hora: '14:00 - 15:30' },
+      { dia: 'Sábado', hora: '10:00 - 11:30' }
+    ],
+    professores: ['Carlos Oliveira', 'Patricia Lima']
+  },
+  {
+    id: 3,
+    nome: 'Dança Contemporânea',
+    imagem: '/modalidades/contemporanea.jpg',
+    descricao: 'A Dança Contemporânea explora movimentos livres e criativos, mesclando diferentes técnicas e permitindo maior expressão corporal.',
+    horarios: [
+      { dia: 'Terça e Quinta', hora: '19:00 - 20:30' },
+      { dia: 'Sábado', hora: '14:00 - 15:30' }
+    ],
+    professores: ['Roberto Mendes', 'Juliana Costa']
+  },
+  {
+    id: 4,
+    nome: 'Hip Hop',
+    imagem: '/modalidades/hiphop.jpg',
+    descricao: 'O Hip Hop é um estilo urbano que trabalha ritmo, coordenação e atitude através de movimentos marcantes e coreografias dinâmicas.',
+    horarios: [
+      { dia: 'Segunda e Quarta', hora: '18:00 - 19:30' },
+      { dia: 'Sábado', hora: '16:00 - 17:30' }
+    ],
+    professores: ['Diego Santos', 'Bruna Oliveira']
+  }
+];
 
-  // MOCK DE DADOS
-  const dados = [
-    {
-      titulo: 'Danças Urbanas',
-      desc: 'Estilo de dança originado nas Ruas e sua cultura',
-      texto: 'As danças urbanas são estilos de dança que surgiram em contextos urbanos, muitas vezes relacionados à cultura de rua e ao movimento hip-hop. Elas envolvem movimentos energéticos, criativos e expressivos, que misturam influências de diversas danças tradicionais com novas abordagens inovadoras. Esses estilos costumam refletir a identidade das comunidades de onde surgem, expressando emoções e histórias de vida por meio do corpo e do ritmo.',
-    },
-    {
-      titulo: 'Estilo Livre',
-      desc: 'Danças criativas e espontâneas sem regras fixas',
-      texto: 'O estilo livre de dança é caracterizado pela improvisação e liberdade de expressão. Não há coreografia fixa ou regras rígidas, permitindo ao dançarino criar movimentos únicos, muitas vezes baseados em sua própria interpretação da música. Esse estilo é popular em diversas culturas urbanas e está diretamente ligado ao desejo de liberdade, sendo uma forma de conectar corpo e mente com a música de maneira orgânica e espontânea.',
-    },
-    {
-      titulo: 'K-pop',
-      desc: 'Dança coreografada do universo musical coreano',
-      texto: 'O K-pop, originado na Coreia do Sul, é um gênero musical que também se destaca pelas suas coreografias elaboradas e sincronizadas. As danças de K-pop são meticulosamente planejadas, com movimentos complexos e enérgicos que complementam a música. A dança no K-pop envolve uma mistura de estilos, incluindo pop, hip-hop e até dança moderna, e é um componente essencial dos shows, videoclipes e performances ao vivo dos grupos. É conhecida por sua precisão e energia, cativando fãs de todo o mundo.',
-    }
-  ];
+export default function Modalidades() {
+  const [modalidadeSelecionada, setModalidadeSelecionada] = useState(null);
+
+  const abrirModal = (modalidade) => {
+    setModalidadeSelecionada(modalidade);
+  };
+
+  const fecharModal = () => {
+    setModalidadeSelecionada(null);
+  };
 
   return (
-    <section>
+    <section className="modalidades-page">
       <Header />
-      <CampoSobre
-        titulo={dados[0].titulo}
-        desc={dados[0].desc}
-        texto={dados[0].texto}
-      />
+      <div className="modalidades-container">
+        <h1>Nossas Modalidades</h1>
+        <div className="modalidades-grid">
+          {modalidades.map((modalidade) => (
+            <ModalidadeCard
+              key={modalidade.id}
+              modalidade={modalidade}
+              onOpenModal={abrirModal}
+            />
+          ))}
+        </div>
+      </div>
+      {modalidadeSelecionada && (
+        <ModalidadeModal
+          modalidade={modalidadeSelecionada}
+          onClose={fecharModal}
+        />
+      )}
     </section>
-  )
+  );
 }
