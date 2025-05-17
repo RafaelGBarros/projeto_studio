@@ -1,8 +1,8 @@
 export const professores = [
   {
     id: 1,
-    nome: 'Maria Silva',
-    foto: '/professores/maria.jpg',
+    nome: 'Rogeria Thome',
+    foto: '/rogeriaThome.jpg',
     descricaoBreve: 'Especialista em Ballet Clássico com mais de 15 anos de experiência.',
     biografia: 'Maria Silva é uma renomada professora de Ballet Clássico, formada pela Royal Academy of Dance. Com mais de 15 anos de experiência, já formou diversas bailarinas que hoje atuam em companhias nacionais e internacionais.',
     modalidades: ['Ballet Clássico', 'Ballet Contemporâneo'],
@@ -18,8 +18,8 @@ export const professores = [
   },
   {
     id: 2,
-    nome: 'Carlos Oliveira',
-    foto: '/professores/carlos.jpg',
+    nome: 'Paloma Castro',
+    foto: '/palomaCastro.jpg',
     descricaoBreve: 'Professor de Jazz e Dança Contemporânea com formação internacional.',
     biografia: 'Carlos Oliveira é um professor apaixonado por Jazz e Dança Contemporânea. Sua formação internacional inclui passagens por escolas renomadas em Nova York e Paris.',
     modalidades: ['Jazz', 'Dança Contemporânea'],
@@ -35,8 +35,8 @@ export const professores = [
   },
   {
     id: 3,
-    nome: 'Ana Paula Santos',
-    foto: '/professores/ana.jpg',
+    nome: 'Karla Fiod',
+    foto: '/karlaFiod.jpg',
     descricaoBreve: 'Especialista em Dança Contemporânea e Improvisação.',
     biografia: 'Ana Paula Santos é uma professora dedicada à Dança Contemporânea e à arte da improvisação. Sua abordagem única combina técnicas tradicionais com elementos modernos.',
     modalidades: ['Dança Contemporânea', 'Improvisação'],
@@ -52,8 +52,8 @@ export const professores = [
   },
   {
     id: 4,
-    nome: 'Diego Santos',
-    foto: '/professores/diego.jpg',
+    nome: 'Gustavo Castiel',
+    foto: '/gustavoCastiel.jpg',
     descricaoBreve: 'Professor de Hip Hop e Danças Urbanas com experiência internacional.',
     biografia: 'Diego Santos é um professor de Hip Hop e Danças Urbanas com vasta experiência em competições internacionais. Sua metodologia combina técnica e expressão artística.',
     modalidades: ['Hip Hop', 'Danças Urbanas'],

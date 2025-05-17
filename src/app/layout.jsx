@@ -1,14 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import '../styles/globals.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -26,7 +21,7 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={inter.variable}>
         {children}
       </body>
     </html>
