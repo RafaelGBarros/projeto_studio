@@ -1,12 +1,47 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import ModalidadeCard from '@/components/ModalidadeCard'
 import ModalidadeModal from '@/components/ModalidadeModal'
-import { modalidades } from '@/data/modalidades'
+import { modalidades as modalidadesImagens } from '@/data/modalidades'
 
 export default function Modalidades() {
+  const [modalidades, setModalidades] = useState([]);
   const [modalidadeSelecionada, setModalidadeSelecionada] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchModalidades = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/modalidades');
+        if (!response.ok) {
+          throw new Error('Erro ao carregar modalidades');
+        }
+        const data = await response.json();
+        
+        // Combina os dados do banco com as imagens da pasta data
+        const modalidadesCombinadas = data.map(modalidade => {
+          const modalidadeImagem = modalidadesImagens.find(m => 
+            m.nome.toLowerCase() === modalidade.nome.toLowerCase()
+          );
+          
+          return {
+            ...modalidade,
+            imagem: modalidadeImagem?.imagem || '/default.jpg'
+          };
+        });
+        
+        setModalidades(modalidadesCombinadas);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchModalidades();
+  }, []);
 
   const abrirModal = (modalidade) => {
     setModalidadeSelecionada(modalidade);
@@ -15,6 +50,9 @@ export default function Modalidades() {
   const fecharModal = () => {
     setModalidadeSelecionada(null);
   };
+
+  if (loading) return <div>Carregando...</div>;
+  if (error) return <div>Erro: {error}</div>;
 
   return (
     <section className="modalidades-page">

@@ -36,20 +36,20 @@ export default function ModalidadeModal({ modalidade, onClose }) {
               <div className="info-section">
                 <h3>Horários</h3>
                 <ul>
-                  {modalidade.horarios.map((horario, index) => (
+                  {modalidade.horarios?.map((horario, index) => (
                     <li key={index}>
                       {horario.dia}: {horario.hora}
                     </li>
-                  ))}
+                  )) || <li>Horários em breve</li>}
                 </ul>
               </div>
 
               <div className="info-section">
                 <h3>Professores</h3>
                 <ul>
-                  {modalidade.professores.map((professor, index) => (
+                  {modalidade.professores?.map((professor, index) => (
                     <li key={index}>{professor}</li>
-                  ))}
+                  )) || <li>Professores em breve</li>}
                 </ul>
               </div>
 

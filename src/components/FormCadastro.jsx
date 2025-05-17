@@ -7,8 +7,14 @@ export default function FormCadastro() {
     nome: '',
     email: '',
     telefone: '',
-    modalidade: '',
+    data_nascimento: '',
     mensagem: ''
+  });
+
+  const [status, setStatus] = useState({
+    loading: false,
+    error: null,
+    success: false
   });
 
   const handleChange = (e) => {
@@ -19,10 +25,34 @@ export default function FormCadastro() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui será implementada a lógica de envio para o banco de dados
-    console.log('Dados do formulário:', formData);
+    setStatus({ loading: true, error: null, success: false });
+
+    try {
+      const response = await fetch('http://localhost:3001/api/cadastros', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao enviar cadastro');
+      }
+
+      setStatus({ loading: false, error: null, success: true });
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        data_nascimento: '',
+        mensagem: ''
+      });
+    } catch (error) {
+      setStatus({ loading: false, error: error.message, success: false });
+    }
   };
 
   return (
@@ -30,6 +60,18 @@ export default function FormCadastro() {
       <BotaoVoltar />
       <h1>Faça Parte do Nosso Studio</h1>
       <p>Preencha o formulário abaixo para iniciar sua jornada conosco</p>
+      
+      {status.error && (
+        <div className="error-message">
+          {status.error}
+        </div>
+      )}
+
+      {status.success && (
+        <div className="success-message">
+          Cadastro realizado com sucesso!
+        </div>
+      )}
       
       <form onSubmit={handleSubmit} className="form-cadastro">
         <div className="campo-form">
@@ -72,21 +114,15 @@ export default function FormCadastro() {
         </div>
 
         <div className="campo-form">
-          <label htmlFor="modalidade">Modalidade de Interesse</label>
-          <select
-            id="modalidade"
-            name="modalidade"
-            value={formData.modalidade}
+          <label htmlFor="data_nascimento">Data de Nascimento</label>
+          <input
+            type="date"
+            id="data_nascimento"
+            name="data_nascimento"
+            value={formData.data_nascimento}
             onChange={handleChange}
             required
-          >
-            <option value="">Selecione uma modalidade</option>
-            <option value="ballet">Ballet</option>
-            <option value="jazz">Jazz</option>
-            <option value="contemporaneo">Contemporâneo</option>
-            <option value="hiphop">Hip Hop</option>
-            <option value="zumba">Zumba</option>
-          </select>
+          />
         </div>
 
         <div className="campo-form">
@@ -101,8 +137,12 @@ export default function FormCadastro() {
           />
         </div>
 
-        <button type="submit" className="botao-enviar">
-          Enviar Pré-cadastro
+        <button 
+          type="submit" 
+          className="botao-enviar"
+          disabled={status.loading}
+        >
+          {status.loading ? 'Enviando...' : 'Enviar Pré-cadastro'}
         </button>
       </form>
     </div>
