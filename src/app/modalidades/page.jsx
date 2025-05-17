@@ -14,7 +14,7 @@ export default function Modalidades() {
   useEffect(() => {
     const fetchModalidades = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/modalidades');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/modalidades`);
         if (!response.ok) {
           throw new Error('Erro ao carregar modalidades');
         }

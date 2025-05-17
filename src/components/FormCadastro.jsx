@@ -30,7 +30,7 @@ export default function FormCadastro() {
     setStatus({ loading: true, error: null, success: false });
 
     try {
-      const response = await fetch('http://localhost:3001/api/cadastros', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cadastros`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
