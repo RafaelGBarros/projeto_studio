@@ -18,10 +18,10 @@ export default function conteudoPrincipal() {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/studiodedancart/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/seunumero" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/12982202593" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-whatsapp"></i>
             </a>
           </div>
