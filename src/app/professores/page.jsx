@@ -14,7 +14,7 @@ export default function Professores() {
   useEffect(() => {
     const fetchProfessores = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/professores');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/professores`);
         if (!response.ok) {
           throw new Error('Erro ao carregar professores');
         }
