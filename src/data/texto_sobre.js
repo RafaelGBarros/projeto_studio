@@ -1,0 +1,6 @@
+export const textoSobre = `O Studio de Dança RT, fundado em 1999 por Rogéria Thomé no bairro Gaivotas, em Caraguatatuba, é um importante centro de danças urbanas do Litoral Norte de São Paulo. Com cerca de 70 dançarinos distribuídos nas categorias infantil, juvenil e adulto, o estúdio é reconhecido pela excelência artística e pelo compromisso social.
+
+Ao longo de sua trajetória, conquistou mais de 80 troféus em festivais nacionais e internacionais, com destaque para premiações no Super Star Dance, no Paraguai, no Festival Internacional Hip Hop Beach, em São Vicente, e no Ilha Dance Festival, em Ilhabela, onde a coreografia "Tabuleiro" foi eleita Coreografia do Ano.
+
+O Studio também realiza espetáculos autorais, como "Onde Tudo Pode Acontecer", apresentado no Teatro Mario Covas, e participa de eventos culturais locais como o Caraguá Beats e a Mostra Itinerante de Dança "De Ponta a Ponta", promovendo a cultura hip-hop e a dança urbana na região. A trajetória do Studio RT é marcada pela valorização da arte e pela inclusão social.
+`; 

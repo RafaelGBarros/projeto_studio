@@ -1,19 +1,15 @@
+'use client'
 
-
-export default function ItemCarrossel({ titulo, descricao, imagem, onClick }) {
-  const estilo = {
-    backgroundImage: `url(${imagem})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    cursor: 'pointer'
-  };
-
+export default function ItemCarrossel({ item, onOpenModal }) {
   return (
-    <div className="item-carrossel" style={estilo} onClick={onClick}>
-      <div className="conteudo">
-        <h3>{titulo}</h3>
-        <p>{descricao}</p>
+    <div className="item_carrossel" onClick={() => onOpenModal(item)}>
+      <div className="item_imagem">
+        <img src={item.imagem} alt={item.titulo} />
+      </div>
+      <div className="item_conteudo">
+        <h3 style={{fontWeight: 'normal'}}>{item.titulo}</h3>
+        <p>{item.descricao}</p>
       </div>
     </div>
-  );
-}
+  )
+} 

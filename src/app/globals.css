@@ -1,0 +1,155 @@
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Estilos gerais de layout */
+main {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Estilos de componentes */
+.header {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav_list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav_link:hover {
+  color: #666;
+}
+
+/* Estilos de botões */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn_primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn_primary:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos de cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos de títulos */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Estilos de texto */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Estilos de links */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Estilos de imagens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos de grid */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Estilos de flexbox */
+.flex {
+  display: flex;
+}
+
+.flex_center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos de container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Estilos de espaçamento */
+.mt_1 { margin-top: 0.5rem; }
+.mt_2 { margin-top: 1rem; }
+.mt_3 { margin-top: 1.5rem; }
+.mt_4 { margin-top: 2rem; }
+
+.mb_1 { margin-bottom: 0.5rem; }
+.mb_2 { margin-bottom: 1rem; }
+.mb_3 { margin-bottom: 1.5rem; }
+.mb_4 { margin-bottom: 2rem; }
+
+/* Estilos de responsividade */
+@media (max-width: 768px) {
+  .nav_list {
+    gap: 1rem;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+} 

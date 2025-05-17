@@ -1,86 +1,52 @@
-'use client';
-import { useEffect, useState } from 'react';
-import Slider from 'react-slick';
-import ItemCarrossel from './ItemCarrossel';
+'use client'
+import { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css/bundle'
+import ItemCarrossel from './ItemCarrossel'
+import ExibeItem from './ExibeItem'
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+export default function Carrossel({ items }) {
+  const [itemSelecionado, setItemSelecionado] = useState(null)
 
-export default function Carrossel() {
-  const [isMobile, setIsMobile] = useState(false);
+  const abrirModal = (item) => {
+    setItemSelecionado(item)
+  }
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-  };
-
-  //  MOCK DE DADOS
-  const dados = [
-    {
-      titulo: 'RT sobe a Serra! Eventos de Outubro',
-      descricao: 'Tudo que rolou durante nossa participacao no evento CHRVT em campos de Jordão.',
-      imagem: '/noticia1.png',
-      texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      caminho: '/',
-    },
-    {
-      titulo: 'Bem vindos, Novos integrantes!',
-      descricao: 'Sai hoje, Resultado de nossa audição para novos integrantes 2025',
-      imagem: '/noticia2.png',
-      texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      caminho: '/',
-    },
-    {
-      titulo: 'Ingressos a Venda! Favela Raizes',
-      descricao: 'Abrimos as vendas para nosso espetaculo, garanta ja o seu!',
-      imagem: '/noticia3.png',
-      texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      caminho: '/',
-    }
-  ];
-
-  if (isMobile) {
-    return (
-      <div className="carrossel-container">
-        {dados.map((item, index) => (
-          <ItemCarrossel
-            key={index}
-            titulo={item.titulo}
-            descricao={item.descricao}
-          />
-        ))}
-      </div>
-    );
+  const fecharModal = () => {
+    setItemSelecionado(null)
   }
 
   return (
-    <div className="carrossel">
-      <Slider {...settings}>
-        {dados.map((item, index) => (
-          <ItemCarrossel
-            key={index}
-            titulo={item.titulo}
-            descricao={item.descricao}
-          />
+    <div className="carrossel_container">
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        className="swiper"
+      >
+        {items.map((item) => (
+          <SwiperSlide key={item.id} className="swiper_slide">
+            <ItemCarrossel item={item} onOpenModal={abrirModal} />
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
+
+      {itemSelecionado && (
+        <ExibeItem item={itemSelecionado} onClose={fecharModal} />
+      )}
     </div>
-  );
-}
+  )
+} 
