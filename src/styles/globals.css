@@ -583,20 +583,20 @@ header {
 
 .welcome-title {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  margin-left: auto;
+  text-align: left;
+  margin-left: 0;
   padding-right: 20px;
-  width: 80%;
+  width: 100%;
   margin-bottom: 30px;
 }
 
 .welcome-title h1 {
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   color: var(--font-color);
-  font-weight: 400;
-  margin: 0;
+  font-weight: normal;
+  margin-right: 0;
   line-height: 1.2;
+  width: 100%;
 }
 
 .home-content {
@@ -609,7 +609,7 @@ header {
 }
 
 .presentation-text {
-  width: 100%;
+  width: 80%;
   text-align: justify;
   margin-left: auto;
 }
@@ -1546,5 +1546,43 @@ img {
 
   .modal_imagem {
     height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .conteudo-principal {
+    margin-top: 180px;
+    width: 90%;
+    border-radius: 0 200px 200px 0;
+    padding: 20px 40px 20px 20px;
+  }
+
+  .welcome-title {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .home-content {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .presentation-text {
+    width: 100%;
+  }
+
+  .social-links {
+    justify-content: center;
+    padding-right: 0;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .conteudo-principal {
+    width: 90%;
+    border-radius: 0 150px 150px 0;
+    padding: 15px 30px 15px 15px;
   }
 } 

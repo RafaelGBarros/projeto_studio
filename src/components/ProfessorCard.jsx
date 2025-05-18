@@ -24,7 +24,7 @@ export default function ProfessorCard({ professor, onOpenModal }) {
         </div>
         <div className="professor-info">
           <h3>{professor.nome}</h3>
-          <p className="professor-descricao">{professor.descricaoBreve}</p>
+          <p className="professor-descricao">{professor.biografia}</p>
           <div className="professor-modalidades">
             {professor.modalidades.map((modalidade, index) => (
               <span key={index} className="modalidade-tag">{modalidade}</span>
