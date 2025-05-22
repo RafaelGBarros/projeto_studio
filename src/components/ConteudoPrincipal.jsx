@@ -1,6 +1,6 @@
-'use client';
+import SocialLinks from './SocialLinks';
 
-export default function conteudoPrincipal() {
+export default function ConteudoPrincipal() {
   return (
     <div className="conteudo-principal">
       <div className="welcome-title">
@@ -14,17 +14,7 @@ export default function conteudoPrincipal() {
             transformar vidas através da dança, oferecendo um ambiente profissional e 
             familiar para todos os amantes da arte do movimento.
           </p>
-          <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/studiodedancart/" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/12982202593" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-whatsapp"></i>
-            </a>
-          </div>
+          <SocialLinks />
         </div>
       </div>
     </div>
